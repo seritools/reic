@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package reic_commands;
+
+message SampleCommand {
+    uint64 file_id = 1;
+}
+
+message SampleCommandResponse {
+    BaseCommandResult result = 1;
+}
+
+message BaseCommandResult {
+    bool success = 1;
+    oneof fail_reason {
+        // If set, there are still changes left to be sent back.
+        // Try again when this change was received/processed
+        uint64 wait_until_change = 2;
+    };
+}

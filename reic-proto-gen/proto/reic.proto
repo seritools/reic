@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package reic;
+
+import "changes.proto";
+import "commands.proto";
+
+service Reic {
+    rpc GetFileList (FileListRequest) returns (stream FileList);
+    rpc OpenFile (OpenFileRequest) returns (stream reic_changes.FileChanges);
+    rpc SampleCommand (reic_commands.SampleCommand) returns (reic_commands.SampleCommandResponse);
+}
+
+message OpenFileRequest {
+    uint64 file_id = 1;
+}
+
+message File {
+    uint64 file_id = 1;
+    string name = 2;
+}
+
+message FileListRequest {
+}
+
+message FileList {
+    repeated File files = 1;
+}

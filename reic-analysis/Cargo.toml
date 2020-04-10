@@ -1,0 +1,25 @@
+[package]
+name = "reic-analysis"
+version = "0.1.0-indev.1"
+authors = ["Dennis Duda <git@seri.tools>"]
+edition = "2018"
+
+[dependencies]
+nameof = "1.1"
+nom = "5"
+num-traits = "0.2"
+num-derive = "0.3"
+
+serde = { version = "1.0", features = ["derive"] }
+
+# tarpc https://github.com/google/tarpc
+# sled https://docs.rs/sled/0.31.0/sled/
+bincode = "1.2"
+
+petgraph = { version = "0.4.13", features = ["serde-1"] }
+smallvec = "1.1"
+ahash = "0.2"
+
+bitflags = "1.2"
+
+zydis = { git = "https://github.com/zyantific/zydis-rs.git", branch = "master" }

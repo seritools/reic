@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package reic_changes;
+
+message FileChanges {
+    uint64 changes_id = 1;
+    uint64 changes_hash = 2;
+    repeated FileChange changes = 3;
+}
+
+message FileChange {
+}

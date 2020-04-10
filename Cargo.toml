@@ -1,0 +1,9 @@
+[workspace]
+
+members = [
+    "reic-core",
+    "reic-analysis",
+    "reic-server",
+    "reic-client",
+    "reic-proto-gen"
+]
